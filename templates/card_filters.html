@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+    .odd {
+        color: blue;
+    }
+</style>
+<a href="{% url 'home' %}">cards</a><br>
+It's {% now "F j " %}!<br>
+We have {{ cards | length }} cards!
+
+{% for card in cards %}
+    <div>
+        <p class="{% cycle 'even' 'odd' %}">
+
+            Capitalized Suit: {{ card.get_suit_display | truncatechars:4 }} <br>
+            Uppercased Rank: {{ card.rank | upper }}
+        </p>
+    </div>
+{% endfor %}
+<a href="{% url 'home' %}">cards</a>
+</body>
+</html>

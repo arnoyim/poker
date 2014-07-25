@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+<h1>Clubs</h1>
+{% for card in cards %}
+    {% if card.suit == 1 %}
+        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+    {% endif %}
+{% endfor %}
+<h1>Diamonds/Hearts</h1>
+{% for card in cards %}
+    {% if card.suit == 2 or card.suit == 3 %}
+        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
+    {% endif %}
+{% endfor %}
+<h1>advance</h1>
+{% for card in cards %}
+    {% if card.rank in facecard %}
+       <p> Random Card : {{ facecard | random }}, Suit: {{ card.get_suit_display }}</p>
+{#        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}#}
+    {% endif %}
+{% endfor %}
+
+
+
+{#    {% for card in cards %}#}
+{#        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>#}
+{#    {% endfor %}#}
+</div>
+</body>
+</html>

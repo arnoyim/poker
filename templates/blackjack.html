@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Blackjack!</h2>
+    <p>Here's your hand...</p>
+    {% include 'includes/hand.html' %}
+{% endblock content %}
+{% for card in cards %}
+    {% if card.rank == "ace" %}
+
+{#        {% html_content = <h2>'Hey {} {} lucky you!!!</h2> <div> you just got an ACE</div>'.format(user.first_name, user.last_name)%}#}
+{#        {% msg = EmailMultiAlternatives("ACE!", text_content, settings.DEFAULT_FROM_EMAIL, [user.email])%}#}
+{#        {% msg.attach_alternative(html_content, "text/html")%}#}
+{#        {% msg.send()%}#}
+    {% endif %}
+{% endfor %}

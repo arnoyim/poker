@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ {% load list_filters %}
+
+{% for card in cards|shuffle|deal:5  %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+{% endblock content %}

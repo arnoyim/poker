@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for user_card in user_cards %}
+    Your Card: {{ user_cards }}<br>
+    {% endfor %}
+    {% for dealer_card in dealer_cards %}
+    Dealers Card: {{ dealer_cards }}<br>
+    {% endfor %}
+    Results: {{ result }}<br>
+
+
+
+{% endblock %}

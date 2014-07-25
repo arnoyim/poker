@@ -1,0 +1,7 @@
+{% for card in cards %}
+    {% if card.alt_img  %}
+        <img width="100px" src="{{ card.alt_img.url }}">
+    {% else %}
+        <img width="100px" src="{{ card.image.url }}">
+    {% endif %}
+{% endfor %}
